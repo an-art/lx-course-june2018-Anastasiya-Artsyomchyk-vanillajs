@@ -1,0 +1,1 @@
+# lx-course-june2018-Anastasiya-Artsyomchyk-vanillajs
