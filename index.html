@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"></meta>
+	<title>Homework</title>
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+</head>
+<body>
+	<div class="flex-wrapper content-wrapper">
+		<aside class="orders-list-container">
+			<header class="flex-wrapper header">
+				<button><i class="fas fa-angle-left back-arrow"></i></button>
+				<h2>Orders (<span>10</span>)</h2>			
+			</header>
+			<main>
+				<form class="search-form">
+					<input type="search" class="search-field" placeholder="Search">
+					<button class="search-btn search"><i class="fas fa-search"></i></button>
+					<button class="search-btn reload"><i class="fas fa-sync"></i></button>
+				</form>
+				<ul class="orders-list">
+					<li class="order">
+						<div class="flex-wrapper">
+							<p class="number">Order <span>7991</span></p>
+							<p class="date">21.11.2018</p>
+						</div>
+						<div class="flex-wrapper">
+							<p>Berglunds snabbkop</p>
+							<p class="in-time">In time</p>
+						</div>
+						<p>Shippedd: <span>25 nov 2018</span></p>
+					</li>
+					<li class="order">
+						<div class="flex-wrapper">
+							<p class="number">Order <span>7918</span></p>
+							<p class="date">18.09.2018</p>
+						</div>
+						<div class="flex-wrapper">
+							<p>Tortuga Restaurante</p>
+							<p class="urgent">Urgent</p>
+						</div>
+						<p>Shippedd: <span>2 sept 2018</span></p>
+					</li>
+					<li class="order">
+						<div class="flex-wrapper">
+							<p class="number">Order <span>7375</span></p>
+							<p class="date">06.10.2018</p>
+						</div>
+						<div class="flex-wrapper">
+							<p>Around the Horn</p>
+							<p class="in-time">In time</p>
+						</div>
+						<p>Shippedd: <span>14 oct 2018</span></p>
+					</li>
+					<li class="order">
+						<div class="flex-wrapper">
+							<p class="number">Order <span>7311</span></p>
+							<p class="date">21.11.2018</p>
+						</div>
+						<div class="flex-wrapper">
+							<p>Alfreds Futterkiste</p>
+							<p class="in-time">In time</p>
+						</div>
+						<p>Shippedd: <span>25 nov 2018</span></p>
+					</li>
+					<li class="order">
+						<div class="flex-wrapper">
+							<p class="number">Order <span>6858</span></p>
+							<p class="date">13.11.2018</p>
+						</div>
+						<div class="flex-wrapper">
+							<p>Tortuga Restaurante</p>
+							<p class="in-time">In time</p>
+						</div>
+						<p>Shippedd: <span>14 nov 2018</span></p>
+					</li>
+					<li class="order">
+						<div class="flex-wrapper">
+							<p class="number">Order <span>6368</span></p>
+							<p class="date">13.11.2018</p>
+						</div>
+						<div class="flex-wrapper">
+							<p>Alfreds Futterkiste</p>
+							<p class="in-time">In time</p>
+						</div>
+						<p>Shippedd: <span>19 nov 2018</span></p>
+					</li>
+					<li class="order">
+						<div class="flex-wrapper">
+							<p class="number">Order <span>6189</span></p>
+							<p class="date">28.11.2018</p>
+						</div>
+						<div class="flex-wrapper">
+							<p>Berglunds snabbkop</p>
+							<p class="in-time">In time</p>
+						</div>
+						<p>Shippedd: <span>30 nov 2018</span></p>
+					</li>
+				</ul>
+			</main>
+			<footer class="t-al-r">
+				<a><i class="fas fa-filter"></i></a>
+				<a><i class="fas fa-stream"></i></a>
+			</footer>
+		</aside>
+		<section class="order-card-container">
+			<header class="t-al-c">
+				<h1>Order</h1>
+			</header>
+			<main>
+				<section class="order-card">					
+					<div class="flex-wrapper order-info">
+						<h4>Order 7918</h4>
+						150 935,13
+					</div>
+					<p class="flex-end-wrapper">EUR</p>			
+					<ul class="order-card-info">
+						<li>Customer: <span>Tortuga Restaurante</span></li>
+						<li>Ordered: <span>19 sept 2018</span></li>
+						<li>Shipped: <span>26 sept 2018</span></li>
+					</ul>
+					<ul class="order-card-tabs">
+						<li><a><i class="fas fa-truck"></i></a></li>
+						<li><a><i class="fas fa-user"></i></a></li>
+					</ul>
+				</section>
+				<section class="order-wrapper">
+					<header><h3 class="order-wrapper">Shipping Address</h3></header>
+					<table class="delivery-info">
+						<tr>
+							<td class="t-al-r">Name: </td>
+							<td>ExellentParsel</td>
+						</tr>
+						<tr>
+							<td class="t-al-r">Street: </td>
+							<td>Tottenham Court Road</td>
+						</tr>
+						<tr>
+							<td class="t-al-r">ZIP Code / City: </td>
+							<td>N170AA London</td>
+						</tr>
+						<tr>
+							<td class="t-al-r">Region: </td>
+							<td>Greater London</td>
+						</tr>
+						<tr>
+							<td class="t-al-r">Country: </td>
+							<td>United Kingdom</td>
+						</tr>
+					</table>
+				</section>
+				<section class="order-items order-wrapper">
+						<header><h3 class="order-wrapper">Line Items (<span>4</span>)</h3></header>
+						<table>
+							<thead>
+								<tr>
+									<th class="t-al-l">Product</th>
+									<th class="t-al-c">Unit Price</th>
+									<th class="t-al-c">Quantity</th>
+									<th class="t-al-r">Total</th>
+								</tr>
+							</thead>
+							<tr>
+								<td class="t-al-l"><b>Aniseed Syrop</b><br>1412</td>
+								<td class="t-al-c"><b>65,89</b> EUR</td>
+								<td class="t-al-c">899</td>
+								<td class="t-al-r"><b>59 235,11</b> EUR</td>
+							</tr>
+							<tr>
+								<td class="t-al-l"><b>Tunnbrod</b><br>5672</td>
+								<td class="t-al-c"><b>14,77</b> EUR</td>
+								<td class="t-al-c">2367</td>
+								<td class="t-al-r"><b>34 960,59</b> EUR</td>
+							</tr>
+							<tr>
+								<td class="t-al-l"><b>Northwoods Cranberry Sauce</b><br>5046</td>
+								<td class="t-al-c"><b>61,69</b> EUR</td>
+								<td class="t-al-c">867</td>
+								<td class="t-al-r"><b>53 485,23</b> EUR</td>
+							</tr>	
+							<tr>
+								<td class="t-al-l"><b>Camembert Pierrot</b><br>9505</td>
+								<td class="t-al-c"><b>3,07</b> EUR</td>
+								<td class="t-al-c">1060</td>
+								<td class="t-al-r"><b>3 254,20</b> EUR</td>
+							</tr>
+						</table>
+				</section>
+			</main>
+			<footer class="t-al-r">
+				<a><i class="far fa-envelope"></i></a>
+			</footer>
+		</section>
+	</div>
+</body>
+</html>

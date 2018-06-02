@@ -1,0 +1,304 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {    
+    font: 12px sans-serif;
+    color: rgb(95, 95, 95);
+}
+
+h1, h2, h3, h4 {
+    font-weight: 400;
+}
+
+li {
+    list-style: none;
+}
+
+a:hover, button:hover {
+    cursor: pointer;
+}
+
+input:focus, button:focus {
+    outline: none;
+}
+
+.content-wrapper {
+    max-width: 1400px;
+    min-width: 900px;
+    margin: 0 auto;
+    background-color: white;
+    box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.3);
+}
+
+.flex-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.t-al-l {
+    text-align: left;
+}
+
+.t-al-c {
+    text-align: center;
+}
+
+.t-al-r {
+    text-align: right;
+}
+
+body {
+    background: rgba(134,174,204,1);
+    background: linear-gradient(to bottom, rgba(134,174,204,1) 0%, rgba(212,228,239,1) 67%, rgba(212,228,239,1) 100%);
+}
+
+.orders-list-container {
+    min-width: 250px;
+    width: 20%;
+    border-right: 1px solid white;
+}
+
+.orders-list-container .header {
+    font-weight: 200;
+    align-items: center;
+    padding: 0 35% 0 10px;
+}
+
+.back-arrow {
+    font-size: 2em;
+}
+
+.header h2 {
+    font-size: 1.2em;
+}
+
+.search-field {
+    height: 25px;   
+    width: 100%;    
+}
+
+.search-form {
+    position: relative;
+    padding: 2px;
+}
+
+.header button, 
+.search-btn {
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    opacity: 0.6;
+}
+
+.search-btn {
+    position: absolute;    
+    width: 30px;
+    height: 25px;   
+    top: 2px;
+}
+
+.search-btn.reload {
+    right: 0px;   
+}
+
+.search-btn.search {
+    right: 25px;
+}
+
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button,
+input::-webkit-search-results-button,
+input::-webkit-search-results-decoration { 
+    display: none; 
+}
+
+.orders-list {
+    height: calc(100vh - 89px);
+    overflow-y: scroll;
+}
+
+.orders-list .order {
+    height: 100px;
+    border-bottom: 1px solid rgba(78, 78, 78, 0.2);
+    padding: 15px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.urgent {
+    color: orangered;
+}
+
+.in-time {
+    color: green;
+}
+
+.orders-list .order:hover {
+    background-color: rgba(70, 145, 243, 0.2);
+    cursor: pointer;
+}
+
+.orders-list .order .number, 
+.order-card-container h3 {
+    font-size: 1.3em;
+}
+
+.orders-list .order .date, 
+.order-info {
+    font-size: 1.6em;
+}
+
+.order-card-container {
+    width: 80%;
+}
+
+.order-card-container main {
+    height: calc(100vh - 62px);
+    overflow-y: scroll;
+}
+
+.order-wrapper,
+.order-items table td,
+.order-items table th {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.order-card-container>header, 
+.order-card {
+    background-color: rgba(70, 145, 243, 0.1);
+}
+
+.order-card {
+    padding-top: 25px; 
+    padding-left: 40px;
+    padding-right: 40px;  
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-end-wrapper {
+    align-self: flex-end;
+}
+
+.order-card-container section, 
+.order-card-container header,
+.order-items table td,
+.order-items table th {
+    border-bottom: 2px solid rgba(78, 78, 78, 0.2);
+}
+
+.order-card-container>header {
+    font-size: 0.8em;
+    padding: 5px 0;
+}
+
+.order-card-container h3 {
+    padding-top: 20px;
+    padding-bottom: 5px;
+}
+
+.order-card-info li {
+    padding-top: 10px; 
+}
+
+.order-card-tabs {
+    padding-top: 40px;
+}
+
+.order-card-tabs li {
+    display: inline-block;
+    width: 40px;
+    height: 60px;
+    margin-right: 20px;
+    margin-bottom: -1px;
+    box-sizing: border-box;
+}
+
+.order-card-tabs li a {
+    font-size: 1.7em;
+    display: flex;
+    height: 40px;
+    color: rgb(70, 145, 243);
+    border: 1px solid rgb(70, 145, 243);
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+}
+
+.order-card-tabs li:hover {
+    border-bottom: 1px solid rgb(70, 145, 243);
+}
+.order-card-tabs li a:hover {
+    color: white;
+    background-color: rgb(70, 145, 243);
+}
+
+.delivery-info {
+    margin-left: 15%;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.delivery-info tr td:first-child {
+    padding-right: 10px;
+}
+
+.order-items {
+    background-color: rgba(228, 228, 228, 0.3);
+}
+
+.order-items table {
+    width: 100%;
+    background-color: white;
+    border-spacing: 0;
+    margin-bottom: 10px;
+}
+
+.order-items table thead {
+    background-color: rgba(228, 228, 228, 0.5);
+}
+
+.order-items table td, 
+.order-items table th {    
+    line-height: 1.8em;
+}
+
+footer {
+    background-color: rgb(57, 57, 57);
+    color: white;
+    padding: 10px;
+    height: 33px;
+    box-sizing: border-box;
+}
+
+.orders-list-container footer i {
+    margin: 0 10px;
+}
+
+.order-card-container footer i {
+    font-size: 1.2em;
+}
+
+.header button:hover, .search-btn:hover, footer i:hover {
+    color: rgb(70, 145, 243);
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+ 
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
