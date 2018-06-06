@@ -5,6 +5,7 @@
 	<title>Homework</title>
 	<link href="css/style.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+	<script src="js/data.js"></script>
 </head>
 <body>
 	<div class="flex-wrapper content-wrapper">
@@ -17,86 +18,86 @@
 				<form class="search-form">
 					<input type="search" class="search-field" placeholder="Search">
 					<button class="search-btn search"><i class="fas fa-search"></i></button>
-					<button class="search-btn reload"><i class="fas fa-sync"></i></button>
+					<button type="reset" class="search-btn reload"><i class="fas fa-sync"></i></button>
 				</form>
 				<ul class="orders-list">
-					<li class="order">
+					<!-- <li class="order">
 						<div class="flex-wrapper">
-							<p class="number">Order <span>7991</span></p>
-							<p class="date">21.11.2018</p>
+							<p class="order-header">Order <span>7991</span></p>
+							<p class="creation-date">21.11.2018</p>
 						</div>
 						<div class="flex-wrapper">
 							<p>Berglunds snabbkop</p>
-							<p class="in-time">In time</p>
+							<p class="accepted">In time</p>
 						</div>
-						<p>Shippedd: <span>25 nov 2018</span></p>
+						<p>Shipped: <span>25 nov 2018</span></p>
 					</li>
 					<li class="order">
 						<div class="flex-wrapper">
-							<p class="number">Order <span>7918</span></p>
-							<p class="date">18.09.2018</p>
+							<p class="order-header">Order <span>7918</span></p>
+							<p class="creation-date">18.09.2018</p>
 						</div>
 						<div class="flex-wrapper">
 							<p>Tortuga Restaurante</p>
 							<p class="urgent">Urgent</p>
 						</div>
-						<p>Shippedd: <span>2 sept 2018</span></p>
+						<p>Shipped: <span>2 sept 2018</span></p>
 					</li>
 					<li class="order">
 						<div class="flex-wrapper">
-							<p class="number">Order <span>7375</span></p>
-							<p class="date">06.10.2018</p>
+							<p class="order-header">Order <span>7375</span></p>
+							<p class="creation-date">06.10.2018</p>
 						</div>
 						<div class="flex-wrapper">
 							<p>Around the Horn</p>
-							<p class="in-time">In time</p>
+							<p class="accepted">In time</p>
 						</div>
-						<p>Shippedd: <span>14 oct 2018</span></p>
+						<p>Shipped: <span>14 oct 2018</span></p>
 					</li>
 					<li class="order">
 						<div class="flex-wrapper">
-							<p class="number">Order <span>7311</span></p>
-							<p class="date">21.11.2018</p>
+							<p class="order-header">Order <span>7311</span></p>
+							<p class="creation-date">21.11.2018</p>
 						</div>
 						<div class="flex-wrapper">
 							<p>Alfreds Futterkiste</p>
-							<p class="in-time">In time</p>
+							<p class="accepted">In time</p>
 						</div>
-						<p>Shippedd: <span>25 nov 2018</span></p>
+						<p>Shipped: <span>25 nov 2018</span></p>
 					</li>
 					<li class="order">
 						<div class="flex-wrapper">
-							<p class="number">Order <span>6858</span></p>
-							<p class="date">13.11.2018</p>
+							<p class="order-header">Order <span>6858</span></p>
+							<p class="creation-date">13.11.2018</p>
 						</div>
 						<div class="flex-wrapper">
 							<p>Tortuga Restaurante</p>
-							<p class="in-time">In time</p>
+							<p class="accepted">In time</p>
 						</div>
-						<p>Shippedd: <span>14 nov 2018</span></p>
+						<p>Shipped: <span>14 nov 2018</span></p>
 					</li>
 					<li class="order">
 						<div class="flex-wrapper">
-							<p class="number">Order <span>6368</span></p>
-							<p class="date">13.11.2018</p>
+							<p class="order-header">Order <span>6368</span></p>
+							<p class="creation-date">13.11.2018</p>
 						</div>
 						<div class="flex-wrapper">
 							<p>Alfreds Futterkiste</p>
-							<p class="in-time">In time</p>
+							<p class="accepted">In time</p>
 						</div>
-						<p>Shippedd: <span>19 nov 2018</span></p>
+						<p>Shipped: <span>19 nov 2018</span></p>
 					</li>
 					<li class="order">
 						<div class="flex-wrapper">
-							<p class="number">Order <span>6189</span></p>
-							<p class="date">28.11.2018</p>
+							<p class="order-header">Order <span>6189</span></p>
+							<p class="creation-date">28.11.2018</p>
 						</div>
 						<div class="flex-wrapper">
 							<p>Berglunds snabbkop</p>
-							<p class="in-time">In time</p>
+							<p class="accepted">In time</p>
 						</div>
-						<p>Shippedd: <span>30 nov 2018</span></p>
-					</li>
+						<p>Shipped: <span>30 nov 2018</span></p>
+					</li> -->
 				</ul>
 			</main>
 			<footer class="t-al-r">
@@ -116,42 +117,68 @@
 					</div>
 					<p class="flex-end-wrapper">EUR</p>			
 					<ul class="order-card-info">
-						<li>Customer: <span>Tortuga Restaurante</span></li>
-						<li>Ordered: <span>19 sept 2018</span></li>
-						<li>Shipped: <span>26 sept 2018</span></li>
+						<li class='js-customer'>Customer: <span>Tortuga Restaurante</span></li>
+						<li class='js-ordered'>Ordered: <span>19 sept 2018</span></li>
+						<li class='js-shipped'>Shipped: <span>26 sept 2018</span></li>
 					</ul>
 					<ul class="order-card-tabs">
-						<li><a><i class="fas fa-truck"></i></a></li>
-						<li><a><i class="fas fa-user"></i></a></li>
+						<li class="shipping active"><a class="active"><i class="fas fa-truck"></i></a></li>
+						<li class="customer"><a><i class="fas fa-user"></i></a></li>
 					</ul>
 				</section>
-				<section class="order-wrapper">
+				<section class="order-wrapper js-delivery shipping">
 					<header><h3 class="order-wrapper">Shipping Address</h3></header>
-					<table class="delivery-info">
-						<tr>
-							<td class="t-al-r">Name: </td>
-							<td>ExellentParsel</td>
-						</tr>
-						<tr>
-							<td class="t-al-r">Street: </td>
-							<td>Tottenham Court Road</td>
-						</tr>
-						<tr>
-							<td class="t-al-r">ZIP Code / City: </td>
-							<td>N170AA London</td>
-						</tr>
-						<tr>
-							<td class="t-al-r">Region: </td>
-							<td>Greater London</td>
-						</tr>
-						<tr>
-							<td class="t-al-r">Country: </td>
-							<td>United Kingdom</td>
-						</tr>
-					</table>
+					<form class="delivery-info">
+						<div>
+							<label class="t-al-r">Name: </label>
+							<span class="js-del-name">ExellentParsel</span>
+						</div>
+						<div>
+							<label class="t-al-r">Street: </label>
+							<span class="js-del-addr">Tottenham Court Road</span>
+						</div>
+						<div>
+							<label class="t-al-r">ZIP Code / City: </label>
+							<span class="js-del-zip">N170AA London</span>
+						</div>
+						<div>
+							<label class="t-al-r">Region: </label>
+							<span class="js-del-region">Greater London</span>
+						</div>
+						<div>
+							<label class="t-al-r">Country: </label>
+							<span class="js-del-country">United Kingdom</span>
+						</div>
+					</form>
+				</section>
+				<section class="order-wrapper js-delivery customer">
+					<header><h3 class="order-wrapper">Customer Information</h3></header>
+					<form class="delivery-info">
+						<div>
+							<label class="t-al-r">First Name: </label>
+							<span class="js-cust-fname">ExellentParsel</span>
+						</div>
+						<div>
+							<label class="t-al-r">Last Name: </label>
+							<span class="js-cust-lname">Tottenham Court Road</span>
+						</div>
+						<div>
+							<label class="t-al-r">Address: </label>
+							<span class="js-cust-addr">N170AA London</span>
+						</div>
+						<div>
+							<label class="t-al-r">Phone: </label>
+							<span class="js-cust-phone">Greater London</span>
+						</div>
+						<div>
+							<label class="t-al-r">Email: </label>
+							<span class="js-cust-email">United Kingdom</span>
+						</div>
+					</form>
 				</section>
 				<section class="order-items order-wrapper">
 						<header><h3 class="order-wrapper">Line Items (<span>4</span>)</h3></header>
+						<input type="search" class="search-products order-wrapper" placeholder="Search in table">
 						<table>
 							<thead>
 								<tr>
@@ -193,5 +220,13 @@
 			</footer>
 		</section>
 	</div>
+	<script src="js/orderPrice.js"></script>
+	<script src="js/orderInfo.js"></script>	
+	<script src="js/addOrders.js"></script>
+	<script src="js/handleSearchButton.js"></script>
+	<script src="js/handleReloadButton.js"></script>
+	<script src="js/tabSwitcher.js"></script>
+	<script src="js/sortProducts.js"></script>
+	<script src="js/handleSearchProducts.js"></script>
 </body>
 </html>
