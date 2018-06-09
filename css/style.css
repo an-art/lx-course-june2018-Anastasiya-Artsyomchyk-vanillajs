@@ -263,8 +263,15 @@ input::-webkit-search-results-decoration {
     padding-right: 10px;
 }
 
-.customer {
+.customer-info,
+.shipping-map,
+.undisplayed {
     display: none;
+}
+
+.order-add-btn {
+    font-size: 2em;
+    align-self: center;
 }
 
 .order-items {
@@ -301,7 +308,8 @@ input::-webkit-search-results-decoration {
     box-sizing: border-box;
 }
 
-.orders-list-container footer i {
+.orders-list-container footer i,
+.order-card-container footer i {
     margin: 0 10px;
 }
 
@@ -312,12 +320,11 @@ input::-webkit-search-results-decoration {
 .header button:hover, 
 .search-btn:hover, 
 footer i:hover,
-.order-items table thead th:hover {
-    color: rgb(70, 145, 243);
-}
-
-.order-items table thead th:hover {
+.order-items table thead th:hover,
+.order-items table tr td:last-child:hover,
+.order-add-btn:hover {
     cursor: pointer;
+    color: rgb(70, 145, 243);
 }
 
 ::-webkit-scrollbar {
