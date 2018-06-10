@@ -258,7 +258,7 @@ try {
     }
 
     document.querySelector('.order-items table thead').addEventListener('click', function(e) {
-        let current = findElem(e, "TH", "TR");
+        let current = findElem(e.target, "TH", "TR");
         let colName = current.getAttribute('data-col-name');
         let dir = current.getAttribute('data-sort-dir');
         let newDir = sortTable(colName, dir);
