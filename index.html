@@ -4,15 +4,15 @@
 	<meta charset="UTF-8"></meta>
 	<title>Homework</title>
 	<link href="css/style.css" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-	<script src="js/data.js"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">	
+	<script src="http://api-maps.yandex.ru/2.1/?lang=en_RU" type="text/javascript"></script>
 </head>
 <body>
 	<div class="flex-wrapper content-wrapper">
 		<aside class="orders-list-container">
 			<header class="flex-wrapper header">
 				<button><i class="fas fa-angle-left back-arrow"></i></button>
-				<h2>Orders (<span>10</span>)</h2>			
+				<h2>Orders (<span></span>)</h2>			
 			</header>
 			<main>
 				<form class="search-form">
@@ -24,9 +24,41 @@
 				</ul>
 			</main>
 			<footer class="t-al-r">
+				<a class="add-order-btn"><i class="fas fa-plus"></i></a>
 				<a><i class="fas fa-filter"></i></a>
 				<a><i class="fas fa-stream"></i></a>
 			</footer>
+			<section class="popup add-order">
+				<section class="popup-content">
+					<span class="close-btn">&times;</span>
+					<header>
+						Add Order						
+					</header>
+					<form>
+						<div>
+							<label>Customer</label>
+							<input name="customer" type="text">
+						</div>
+						<div>
+							<label>Created at</label>
+							<input name="createdAt" type="date">
+						</div>
+						<div>
+							<label>Status</label>
+							<select name="status">
+								<option value="Accepted">Accepted</option>
+								<option value="Pending">Pending</option>
+								<option value="Urgent">Urgent</option>
+							</select>
+						</div>
+						<div>
+							<label>Shipped at</label>
+							<input name="shippedAt" type="date">
+						</div>
+						<button class="submit-btn">Save</button>
+					</form>
+				</section>
+			</section>
 		</aside>
 		<section class="order-card-container">
 			<header class="t-al-c">
@@ -45,61 +77,79 @@
 					<ul class="order-card-tabs">
 						<li class="shipping-info active"><a class="active"><i class="fas fa-truck"></i></a></li>
 						<li class="customer-info"><a><i class="fas fa-user"></i></a></li>
+						<li class="shipping-map"><a><i class="fas fa-map-marker-alt"></i></a></li>
 					</ul>
 				</section>
-				<section class="order-wrapper js-delivery shipping-info">
-					<header><h3 class="order-wrapper">Shipping Address</h3></header>
-					<form class="delivery-info">
-						<div>
-							<label class="t-al-r">Name: </label>
-							<span class="js-del-name"></span>
-						</div>
-						<div>
-							<label class="t-al-r">Street: </label>
-							<span class="js-del-addr"></span>
-						</div>
-						<div>
-							<label class="t-al-r">ZIP Code / City: </label>
-							<span class="js-del-zip"></span>
-						</div>
-						<div>
-							<label class="t-al-r">Region: </label>
-							<span class="js-del-region"></span>
-						</div>
-						<div>
-							<label class="t-al-r">Country: </label>
-							<span class="js-del-country"></span>
-						</div>
-					</form>
-				</section>
-				<section class="order-wrapper js-delivery customer-info">
-					<header><h3 class="order-wrapper">Customer Information</h3></header>
-					<form class="delivery-info">
-						<div>
-							<label class="t-al-r">First Name: </label>
-							<span class="js-cust-fname"></span>
-						</div>
-						<div>
-							<label class="t-al-r">Last Name: </label>
-							<span class="js-cust-lname"></span>
-						</div>
-						<div>
-							<label class="t-al-r">Address: </label>
-							<span class="js-cust-addr"></span>
-						</div>
-						<div>
-							<label class="t-al-r">Phone: </label>
-							<span class="js-cust-phone"></span>
-						</div>
-						<div>
-							<label class="t-al-r">Email: </label>
-							<span class="js-cust-email"></span>
-						</div>
-					</form>
+				<section class="delivery-info-container">
+					<section class="order-wrapper js-delivery shipping-info">
+						<header class="flex-wrapper">
+							<h3 class="order-wrapper">Shipping Address</h3>
+							<button class="edit-info-btn">Edit</button>
+						</header>
+						<form class="delivery-info">
+							<div>
+								<label class="t-al-r">Name: </label>
+								<input class="js-del-name" name="delName" type="text" readonly>
+							</div>
+							<div>
+								<label class="t-al-r">Street: </label>
+								<input class="js-del-addr" name="delAddr" type="text" readonly>
+							</div>
+							<div>
+								<label class="t-al-r">ZIP Code / City: </label>
+								<input class="js-del-zip" name="delZip" type="text" readonly>
+							</div>
+							<div>
+								<label class="t-al-r">Region: </label>
+								<input class="js-del-region" name="delRegion" type="text" readonly>
+							</div>
+							<div>
+								<label class="t-al-r">Country: </label>
+								<input class="js-del-country" name="delCountry" type="text" readonly>
+							</div>
+							<button class="undisplayed save-btn">Save</button>
+							<button class="undisplayed cancel-btn" type="reset">Cancel</button>
+						</form>
+					</section>
+					<section class="order-wrapper js-delivery customer-info">
+						<header class="flex-wrapper">
+							<h3 class="order-wrapper">Customer Information</h3>
+							<button class="edit-info-btn">Edit</button>
+						</header>
+						<form class="delivery-info">
+							<div>
+								<label class="t-al-r">First Name: </label>
+								<input class="js-cust-fname" name="custFName" type="text" readonly>
+							</div>
+							<div>
+								<label class="t-al-r">Last Name: </label>
+								<input class="js-cust-lname" name="custLName" type="text" readonly>
+							</div>
+							<div>
+								<label class="t-al-r">Address: </label>
+								<input class="js-cust-addr" name="custAddr" type="text" readonly>
+							</div>
+							<div>
+								<label class="t-al-r">Phone: </label>
+								<input class="js-cust-phone" name="custPhone" type="text" readonly>
+							</div>
+							<div>
+								<label class="t-al-r">Email: </label>
+								<input class="js-cust-email" name="custEmail" type="email" readonly>
+							</div>
+							<button class="undisplayed save-btn">Save</button>
+							<button class="undisplayed cancel-btn" type="reset">Cancel</button>
+						</form>
+					</section>
+					<section class="order-wrapper js-delivery shipping-map">
+						<header><h3 class="order-wrapper">Shipping Map</h3></header>
+						<section id="map"></section>
+					</section>
 				</section>
 				<section class="order-items order-wrapper">
 						<header class="flex-wrapper">
 							<h3 class="order-wrapper">Line Items (<span></span>)</h3>
+							<a class="add-product-btn"><i class="fas fa-plus"></i></a>
 						</header>
 						<input type="search" class="search-products order-wrapper" placeholder="Search in table">
 						<table>
@@ -109,6 +159,7 @@
 									<th class="t-al-c" data-col-name="price" data-sort-dir="asc">Unit Price</th>
 									<th class="t-al-c" data-col-name="quantity" data-sort-dir="asc">Quantity</th>
 									<th class="t-al-r" data-col-name="totalPrice" data-sort-dir="asc">Total</th>
+									<th></th>
 								</tr>
 							</thead>
 							<tr class="undisplayed">
@@ -116,13 +167,65 @@
 								<td class="t-al-c"><b></b> </td>
 								<td class="t-al-c"></td>
 								<td class="t-al-r"><b></b> </td>
+								<td class="delete-product-btn"><i class="far fa-trash-alt delete-product-btn"></i></td>
 							</tr>
 						</table>
 				</section>
 			</main>
 			<footer class="t-al-r">
+				<a class="delete-order-btn"><i class="far fa-trash-alt"></i></a>
 				<a><i class="far fa-envelope"></i></a>
 			</footer>
+			<section class="popup add-product">
+				<section class="popup-content">
+					<span class="close-btn">&times;</span>
+					<header>
+						Add Product						
+					</header>
+					<form>
+						<div>
+							<label>Product Name</label>
+							<input name="name" type="text">
+						</div>
+						<div>
+							<label>Price</label>
+							<input name="price" type="number">
+							<select name="currency">
+								<option value="EUR">EUR</option>
+								<option value="RUB">RUB</option>
+								<option value="BYN">BYN</option>
+								<option value="USD">USD</option>
+								<option value="UAH">UAH</option>
+							</select>
+						</div>
+						<div>
+							<label>Quantity</label>
+							<input name="quantity" type="number">
+						</div>
+						<button class="submit-btn">Save</button>
+					</form>
+				</section>
+			</section>
+			<section class="popup delete-product">
+				<section class="popup-content">
+					<span class="close-btn">&times;</span>
+					<header>
+						Are you sure you want to delete this item?						
+					</header>
+					<button class="confirm-product-del close-btn">Yes, delete it now</button>
+					<button class="close-btn">No, I changed my mind</button>
+				</section>
+			</section>
+			<section class="popup delete-order">
+				<section class="popup-content">
+					<span class="close-btn">&times;</span>
+					<header>
+						Are you sure you want to delete this order?						
+					</header>
+					<button class="confirm-order-del close-btn">Yes, delete it now</button>
+					<button class="close-btn">No, I changed my mind</button>
+				</section>
+			</section>
 		</section>
 	</div>	
 	<script src="js/main.js"></script>

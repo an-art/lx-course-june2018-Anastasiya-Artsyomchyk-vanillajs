@@ -200,7 +200,8 @@ input::-webkit-search-results-decoration {
 .order-card-container section, 
 .order-card-container header,
 .order-items table td,
-.order-items table th {
+.order-items table th,
+.popup-content header {
     border-bottom: 2px solid rgba(78, 78, 78, 0.2);
 }
 
@@ -263,15 +264,34 @@ input::-webkit-search-results-decoration {
     padding-right: 10px;
 }
 
+.delivery-info input:read-only,
+.customer-info input[readonly] {
+    width: 150px;
+    border: none;
+    font-size: 1em;
+}
+
 .customer-info,
 .shipping-map,
 .undisplayed {
     display: none;
 }
 
-.order-add-btn {
-    font-size: 2em;
+.shipping-map section {
+    height: 300px;
+}
+
+.edit-info-btn {
+    padding: 0 10px;
+}
+
+.add-product-btn,
+.edit-info-btn {
     align-self: center;
+}
+
+.add-product-btn {
+    font-size: 1.5em;
 }
 
 .order-items {
@@ -322,9 +342,84 @@ input::-webkit-search-results-decoration {
 footer i:hover,
 .order-items table thead th:hover,
 .order-items table tr td:last-child:hover,
-.order-add-btn:hover {
+.add-product-btn:hover {
     cursor: pointer;
     color: rgb(70, 145, 243);
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; 
+    overflow: hidden; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4);
+}
+
+.popup-content {
+    position: relative;
+    background-color: #fefefe;
+    top: 50%; 
+    left: 50%;
+    padding: 20px;
+    border: 1px outset #888;
+    width: 450px;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+}
+
+.popup-content header {
+    font-size: 1.5em;
+}
+
+.popup-content div,
+.popup-content header {
+    margin-bottom: 10px;
+}
+
+.popup-content label {
+    text-align: right;
+    margin-right: 10px;
+    display: inline-block;
+    width: 80px;
+}
+
+.popup-content input {
+    border: 1px solid #888;
+}
+
+.popup-content button {
+    width: 180px;
+    height: 30px;
+    margin: 10px;
+}
+
+span.close-btn {
+    color: #aaa;
+    position: absolute;
+    right: 5px;
+    top: 0;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+span.close-btn:hover,
+span.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.error input {
+    border: 1px solid red;
+}
+
+.error-message {
+    color: red;
 }
 
 ::-webkit-scrollbar {
